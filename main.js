@@ -14,21 +14,23 @@ async function renderApp() {
     const data = await response.json();
     console.log(data);
   }
-  // This functions tests if there’s an image in the object. If not, next image should be checked.
-
-  async function fetchHighlightImage() {
-    const counter = 0;
-    const metURL =
-      "https://collectionapi.metmuseum.org/public/collection/v1/objects/" +
-      counter;
-
-    if (object.isPublicDomain === false) {
-      console.log("Testing next Image");
-    } else {
-      counter = counter + 1;
-      console.log("Image available");
-    }
-  }
+  // This functions tests if there’s an image in the object.
+  // If not, check next image.
+  // async function fetchHighlightImage() {
+  //   const counter = 0;
+  //   // Does this work or is a fetch needed?
+  //   const metURL =
+  //     "https://collectionapi.metmuseum.org/public/collection/v1/objects/" +
+  //     counter;
+  //   // How to get the key-value of isPublicDomain?
+  //   if (object.isPublicDomain === false) {
+  //     console.log("Testing next Image");
+  //   } else {
+  //     // does the counter works? + better name for counter?
+  //     counter = counter + 1;
+  //     console.log("Image available");
+  //   }
+  // }
 
   appElement.append(headerElement, fetchImages(), mainElement);
 }
