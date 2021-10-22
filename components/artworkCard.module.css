@@ -1,0 +1,8 @@
+.artworkCard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.contentText {
+  font-size: 36px;
+}
