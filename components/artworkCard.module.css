@@ -35,10 +35,10 @@
   margin-bottom: 1rem;
   width: fit-content;
   height: fit-content;
-  padding: 1rem;
+  padding: 0.8rem 1rem;
   border-radius: 3rem;
   color: var(--color-secondary);
-  border: var(--color-secondary) solid 0.15rem;
+  border: var(--color-secondary) solid 0.12rem;
   background: 0;
   font-size: 0.75rem;
   font-weight: 600;
@@ -65,6 +65,7 @@
   .contentHeadline {
     grid-row: 2/3;
     grid-column: 1/2;
+    font-size: 1rem;
   }
 
   .nextImageButton {
