@@ -1,7 +1,13 @@
 import { createElement } from "../lib/elements";
 import styles from "./artworkCard.module.css";
 
-export default function createArtworkCard({ title, image_id }) {
+export default function createArtworkCard({
+  title,
+  artist_title,
+  date_start,
+  dimensions,
+  image_id,
+}) {
   const artworkCard = createElement("div", { className: styles.artworkCard }, [
     createElement(
       "section",
@@ -11,14 +17,23 @@ export default function createArtworkCard({ title, image_id }) {
       [
         createElement("h2", {
           textContent: title,
-          className: styles.contentText,
+          className: styles.contentHeadline,
         }),
-        createElement("section", {
-          // textContent: image_id,
+        createElement("p", {
+          // Line-breaks? \n and <br> don’t work
+          textContent: artist_title + date_start + dimensions,
+          className: styles.contentCopy,
+        }), // Next Image button should deactivate noscroll function and jump to the next image
+        createElement("button", {
+          className: styles.nextImageButton,
+          textContent: "Next Image",
+        }),
+        createElement("img", {
           className: styles.contentImage,
-          src: "https://www.artic.edu/iiif/2/1adf2696-8489-499b-cad2-821d7fde4b33/full/843,/0/default.jpg",
-          // https://www.artic.edu/iiif/2/{identifier}/full/1686,/0/default.jpg
-          // change identifier to image_id
+          src:
+            "https://www.artic.edu/iiif/2/" +
+            image_id +
+            "/full/1686,/0/default.jpg",
         }),
       ]
     ),

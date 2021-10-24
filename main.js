@@ -4,7 +4,10 @@ import "./style.css";
 
 async function renderApp() {
   const appElement = document.querySelector("#app");
-  const headerElement = createElement("header", { textContent: "header" });
+  const headerElement = createElement("header", {
+    textContent: "Art Institute of Chicago App",
+    className: "title",
+  });
   const mainElement = createElement("main", { textContent: "main" });
 
   async function fetchImages() {
