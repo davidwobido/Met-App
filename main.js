@@ -19,8 +19,6 @@ async function renderApp() {
 
   const artworks = await fetchImages();
 
-  // Next Image button
-
   mainElement.append(...artworks);
 
   appElement.append(headerElement, mainElement);
