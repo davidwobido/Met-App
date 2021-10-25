@@ -27,6 +27,12 @@ export default function createArtworkCard({
         createElement("button", {
           className: styles.nextImageButton,
           textContent: "Next Image",
+          onclick: function () {
+            window.scrollTo({
+              top: window.innerHeight,
+              left: 0,
+            });
+          },
         }),
         createElement("img", {
           className: styles.contentImage,

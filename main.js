@@ -8,23 +8,21 @@ async function renderApp() {
     textContent: "Art Institute of Chicago App",
     className: "title",
   });
-  const mainElement = createElement("main", { textContent: "main" });
+  const mainElement = createElement("main");
 
   async function fetchImages() {
     const response = await fetch("https://api.artic.edu/api/v1/artworks");
     const data = await response.json();
-    console.log(data);
     const artworks = data.data.map((artwork) => createArtworkCard(artwork));
-    console.log(artworks);
     return artworks;
   }
 
   const artworks = await fetchImages();
-  // const artworkCards = artworks.map(function (artwork) {
-  //   console.log(artwork);
-  //   return createArtworkCard(artwork);
-  // });
 
-  appElement.append(headerElement, ...artworks, mainElement);
+  // Next Image button
+
+  mainElement.append(...artworks);
+
+  appElement.append(headerElement, mainElement);
 }
 renderApp();
