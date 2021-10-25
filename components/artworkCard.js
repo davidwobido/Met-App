@@ -5,7 +5,7 @@ export default function createArtworkCard({
   title,
   artist_title,
   date_start,
-  dimensions,
+  // dimensions,
   image_id,
 }) {
   const artworkCard = createElement("div", { className: styles.artworkCard }, [
@@ -15,18 +15,42 @@ export default function createArtworkCard({
         className: styles.divider,
       },
       [
-        createElement("h2", {
-          textContent: title,
-          className: styles.contentHeadline,
-        }),
-        createElement("p", {
-          // Line-breaks? \n and <br> don’t work
-          textContent: artist_title + date_start + dimensions,
-          className: styles.contentCopy,
-        }), // Next Image button should deactivate noscroll function and jump to the next image
+        createElement(
+          "h2",
+          {
+            textContent: title,
+            className: styles.contentHeadline,
+          },
+          [
+            createElement(
+              "p",
+              {
+                className: styles.contentCopy,
+              },
+              [
+                artist_title,
+                createElement("br"),
+                date_start,
+                // createElement("br"),
+                // dimensions,
+              ]
+            ),
+          ]
+        ),
+
         createElement("button", {
-          className: styles.nextImageButton,
-          textContent: "Next Image",
+          className: styles.nextArtworkButton,
+          textContent: "Next Artwork",
+          onclick: function () {
+            window.scroll(0, window.innerHeight + window.scrollY);
+          },
+        }),
+        createElement("button", {
+          className: styles.backButton,
+          textContent: "Back",
+          onklick: function () {
+            window.scroll(0, window.innerHeight - window.scrollY);
+          },
         }),
         createElement("img", {
           className: styles.contentImage,

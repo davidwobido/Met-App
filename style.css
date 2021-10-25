@@ -13,14 +13,7 @@
   --color-primary: #14171a;
   --color-secondary: #001aff;
   --color-background: white;
-}
-
-.title {
-  position: fixed;
-  margin: 1rem 0 0 1rem;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.2rem;
+  --color-light: #8e8e8e;
 }
 
 #app {
