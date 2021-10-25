@@ -31,24 +31,37 @@
   justify-self: right;
 }
 
-.nextArtworkButton {
+.nextArtworkButton,
+.backButton {
   grid-column: 1/2;
   grid-row: 4/5;
   align-self: end;
-  margin-left: 1rem;
   margin-bottom: 1rem;
   width: fit-content;
   height: fit-content;
-  padding: 0.8rem 1rem;
   border-radius: 3rem;
-  color: var(--color-secondary);
-  border: var(--color-secondary) solid 0.12rem;
   background: 0;
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
   cursor: pointer;
+}
+
+.nextArtworkButton {
+  justify-self: left;
+  margin-left: 1rem;
+  color: var(--color-secondary);
+  border: var(--color-secondary) solid 0.12rem;
+  padding: 0.8rem 1rem;
+}
+
+.backButton {
+  justify-self: right;
+  margin-right: 1rem;
+  padding: 1rem;
+  color: var(--color-light);
+  border: var(--color-secondary) solid 0rem;
 }
 
 @media screen and (max-width: 800px) {
@@ -73,7 +86,8 @@
     font-size: 1rem;
   }
 
-  .nextArtworkButton {
+  .nextArtworkButton,
+  .backButton {
     grid-column: 1/1;
     grid-row: 2/3;
     margin-bottom: 2rem;

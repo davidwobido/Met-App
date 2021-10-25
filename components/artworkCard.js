@@ -45,6 +45,13 @@ export default function createArtworkCard({
             window.scroll(0, window.innerHeight + window.scrollY);
           },
         }),
+        createElement("button", {
+          className: styles.backButton,
+          textContent: "Back",
+          onklick: function () {
+            window.scroll(0, window.innerHeight - window.scrollY);
+          },
+        }),
         createElement("img", {
           className: styles.contentImage,
           src:
