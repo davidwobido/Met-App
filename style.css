@@ -15,14 +15,6 @@
   --color-background: white;
 }
 
-.title {
-  position: fixed;
-  margin: 1rem 0 0 1rem;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.2rem;
-}
-
 #app {
   font-family: Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

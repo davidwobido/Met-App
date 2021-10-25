@@ -1,26 +1,19 @@
+import createAppHeader from "./components/appHeader";
 import createArtworkCard from "./components/artworkCard";
+import { fetchArtworks } from "./lib/api";
 import { createElement } from "./lib/elements";
 import "./style.css";
 
 async function renderApp() {
   const appElement = document.querySelector("#app");
-  const headerElement = createElement("header", {
-    textContent: "Art Institute of Chicago App",
-    className: "title",
-  });
-  const mainElement = createElement("main");
+  const headerElement = createAppHeader();
 
-  async function fetchImages() {
-    const response = await fetch("https://api.artic.edu/api/v1/artworks");
-    const data = await response.json();
-    const artworks = data.data.map((artwork) => createArtworkCard(artwork));
-    return artworks;
-  }
+  const artworks = await fetchArtworks();
+  const artworkCards = artworks.map(createArtworkCard);
+  //same as
+  //const artworkCards = artworks.map((artwork) => createArtworkCard(artwork));
 
-  const artworks = await fetchImages();
-
-  mainElement.append(...artworks);
-
+  const mainElement = createElement("main", {}, artworkCards);
   appElement.append(headerElement, mainElement);
 }
 renderApp();
