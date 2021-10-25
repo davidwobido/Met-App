@@ -5,7 +5,7 @@ export default function createArtworkCard({
   title,
   artist_title,
   date_start,
-  dimensions,
+  // dimensions,
   image_id,
 }) {
   const artworkCard = createElement("div", { className: styles.artworkCard }, [
@@ -15,23 +15,29 @@ export default function createArtworkCard({
         className: styles.divider,
       },
       [
-        createElement("h2", {
-          textContent: title,
-          className: styles.contentHeadline,
-        }),
         createElement(
-          "p",
+          "h2",
           {
-            className: styles.contentCopy,
+            textContent: title,
+            className: styles.contentHeadline,
           },
           [
-            artist_title,
-            createElement("br"),
-            date_start,
-            createElement("br"),
-            dimensions,
+            createElement(
+              "p",
+              {
+                className: styles.contentCopy,
+              },
+              [
+                artist_title,
+                createElement("br"),
+                date_start,
+                // createElement("br"),
+                // dimensions,
+              ]
+            ),
           ]
         ),
+
         createElement("button", {
           className: styles.nextArtworkButton,
           textContent: "Next Artwork",
